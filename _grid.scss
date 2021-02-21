@@ -1,0 +1,45 @@
+$grid-class: 'grid';
+$grid-columns: 12;
+$grid-gap-row: 24px;
+$grid-gap-column: 24px;
+$grid-auto-fit-min-width: 240px;
+$grid-breakpoints: (
+  "xs": 480px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+  "xl": 1400px
+);
+
+.#{$grid-class} {
+  display: grid;
+  gap: $grid-gap-row $grid-gap-column;
+
+  &--gapless {
+    gap: unset;
+  }
+
+  @for $i from 1 through $grid-columns {
+    &--#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+
+    &--auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax($grid-auto-fit-min-width, 1fr));
+    }
+  }
+
+  @each $breakpoint, $value in $grid-breakpoints {
+    @media (min-width: $value) {
+      @for $i from 1 through $grid-columns {
+        &--#{$breakpoint}--#{$i} {
+          grid-template-columns: repeat($i, minmax(0, 1fr));
+        }
+      }
+
+      &--#{$breakpoint}--auto-fit {
+        grid-template-columns: repeat(auto-fit, minmax($grid-auto-fit-min-width, 1fr));
+      }
+    }
+  }
+}
