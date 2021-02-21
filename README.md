@@ -2,6 +2,10 @@
 
 This SCSS Partial creates a grid system with equal sized columns that can be used for layouts such as image galleries or for layouting other content pieces. [demo](http://mariodammann.de/projects/mtg-token-generator/).
 
+## Demo
+1. [Image grid](http://mariodammann.de/projects/css-grid/fixed.html)
+2. [Nested content grid](http://mariodammann.de/projects/css-grid/content.html)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
@@ -66,7 +70,7 @@ This creates a grid of images with 6 columns on extra large screens (>=1200px). 
    
 ### Breakpoints
 
-The default grid includes the following breakpoints. You may change (renamd, remove, add) breakpoints by adjusting the **$grid-breakpoints** sass map.
+The default grid includes the following breakpoints. You may change (rename, remove, add) breakpoints by editing the **$grid-breakpoints** sass map.
 | Breakpoint         | min-width                                                                                          |
 |------------------|-----------------------------------------------------------------------------------------------------|
 | XS | >= 480px                  |
@@ -81,7 +85,7 @@ The default grid includes the following breakpoints. You may change (renamd, rem
 The default grid class/prefix is "**grid**". You may change this via the **$grid-class** sass variable.
 
 #### Grid gap
-The default grid gap is 24px for rows/columns You may change this via the **$grid-gap-row** or **$grid-gap-column** sass variables.
+The default grid gap between rows/columns is 24px. You may change this via the **$grid-gap-row** or **$grid-gap-column** sass variables.
 
 #### Minimum width for columns in auto-fit grids
 The default grid uses a minimum width of 240px for columns in the auto-fit grid. You may change this via the **$grid-auto-fit-min-width** sass variable.
